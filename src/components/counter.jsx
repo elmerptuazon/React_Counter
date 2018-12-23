@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 0,
+    count: this.props.value,
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Logo_TV_2015.svg/1024px-Logo_TV_2015.svg.png",
     tags: ["tag1", "tag2", "tag3"]
@@ -11,7 +11,7 @@ class Counter extends Component {
     fontSize: 10,
     fontWeight: "bold"
   };
-
+  // INSTALL REACT-SCRIPTS FIRST
   renderTags() {
     if (this.state.tags.length === 0) {
       return <p>There are no tags!</p>;
@@ -31,6 +31,7 @@ class Counter extends Component {
   };
 
   render() {
+    console.log("props: " + this.props);
     return (
       <div>
         <img
